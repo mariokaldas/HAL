@@ -14,7 +14,10 @@ Hardware Abstraction Layer software drivers for sensors and actuators
   7- DC motor
   8- Keypad (3x4 & 4x4 are supported)
   9- LCD (Data bit mode 4,8 are supported)
-  10- LM35 temperature sensor
+  10- temperature sensor
   11- Seven segment display (any number of displays, using encoder or not are supported)
   12- Stepper motor (TB6600 - A4988 are supported)
   13- Stepper motor using H-bridge
+  14- LED
+  15- Limit switch
+  16- Servo motor
