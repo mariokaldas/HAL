@@ -10,8 +10,8 @@
 
 /* Please configure pins and positive or negative logic before use */
 
-#include"std_types.h"
-#include"GPIO.h"
+#include"MCAL/std_types.h"
+#include"MCAL/GPIO.h"
 
 
 
@@ -19,12 +19,24 @@
  *                              LED's definition
  *************************************************************************** */
 
-#define LED_PORT PORTF_ID
+/*
+ * NOTE:
+ *
+ * If you want to use more than one port, add port definition with extension _ADD to it
+ * and begin pin numbers with 8
+ *
+ *  */
 
-#define RED 1
-#define BLUE 2
-#define GREEN 3
+#define LED_PORT        PORTF_ID
+#define LED_PORT_ADD    PORTB_ID
 
+#define LED_DRIVER_RED         1    /* PF1 */
+#define LED_DRIVER_BLUE        2    /* PF2 */
+#define LED_DRIVER_GREEN       3    /* PF3 */
+
+#define LED_PASSENGER_RED      8    /* PB1 */
+#define LED_PASSENGER_BLUE     9    /* PB2 */
+#define LED_PASSENGER_GREEN    10   /* PB3 */
 
 /***************************************************************************
  *                              User-defined types

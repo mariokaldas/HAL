@@ -8,12 +8,12 @@
 #ifndef PUSHBUTTON_H_
 #define PUSHBUTTON_H_
 
-#include "MCAL_Atmega32/std_types.h"
+#include "MCAL/std_types.h"
 
 /***************************************************************************
  *                                Definitions
  *************************************************************************** */
-#define PULLDOWN
+#define PULLUP
 
 #ifdef PULLUP
 #define PB_PRESSED    0
@@ -27,16 +27,25 @@
 #endif
 
 
-#define PB_PORT PORTA_ID
-
-
 /***************************************************************************
- *                              IR's definition
+ *                              PB's definition
  *************************************************************************** */
 
-#define PB1 0
-#define PB2 1
+/*
+ * NOTE:
+ *
+ * If you want to use more than one port, add port definition with extension _ADD to it
+ * and begin pin numbers with 8
+ *
+ *  */
 
+#define PB_PORT                 PORTF_ID
+#define PB_PORT_ADD             PORTB_ID
+
+#define PB_DRIVER_CONTROL       0   /* PF0 */
+#define PB_DRIVER_MULTI_FN      11   /* PF4 */
+
+#define PB_PASSENGER_CONTROL    4  /* PB4 */
 
 /***************************************************************************
  *                           Functions declaration

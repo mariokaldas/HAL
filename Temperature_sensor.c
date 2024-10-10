@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- * Module: Temperature sensor
+ * Module: Complex driver
  *
  * File Name: Temperature_sensor.c
  *
@@ -46,15 +46,15 @@ uint8 TEMPSENSOR_getTemperature(uint8 channel){
 
 
 #ifdef POLLING
-    adc_value = ADC_readChannel(CHANNEL);
+    adc_value = ADC_readChannel(channel);
 #endif
 
 #ifdef INTERRUPT
-    ADC_readChannel(CHANNEL);
+    ADC_readChannel(channel);
     adc_value = g_channelReading;
 #endif
 
-    maxADC_sensor = (uint32)(((float32)ADC_MAX_VALUE * TEMPERATURE_MAX)/ADC_V_REF) ;
+    maxADC_sensor = (uint32)(((float32)ADC_MAX_VALUE * TEMPERATURE_MAX_VOLT)/ADC_V_REF) ;
 
     Temperature =
             (uint8)( ( ((float32)(adc_value - ADC_MIN_VALUE) * (TEMPERATURE_MAX - TEMPERATURE_MIN))

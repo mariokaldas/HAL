@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- * Module: Temperature sensor
+ * Module: Complex driver
  *
  * File Name: Temperature_sensor.h
  *
@@ -24,7 +24,10 @@
 
 #define TEMPERATURE_MAX_VOLT        3.3
 
-#define CHANNEL 2
+/* Make sure that channels are configured from ADC driver */
+
+#define TEMPERATURE_DRIVER    AIN0  /* channel AIN0  PE3  */
+#define TEMPERATURE_PASSENGER AIN1  /* channel AIN1  PE2  */
 
 /****************************************************************************
  *                             Functions prototypes
@@ -33,11 +36,8 @@
 /* Configure channel in ADC.c configuration */
 void TEMPSENSOR_init(void);
 
-
+/* Pass the channel that connected to the required sensor */
 uint8 TEMPSENSOR_getTemperature(uint8 channel);
-
-
-
 
 
 #endif /* HAL_TEMPERATURE_SENSOR_H_ */
