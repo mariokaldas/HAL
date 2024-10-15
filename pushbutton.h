@@ -43,15 +43,17 @@
 #define PB_PORT_ADD             PORTB_ID
 
 #define PB_DRIVER_CONTROL       0   /* PF0 */
-#define PB_DRIVER_MULTI_FN      11   /* PF4 */
+#define PB_DRIVER_MULTI_FN      11   /* PB4 */
 
-#define PB_PASSENGER_CONTROL    4  /* PB4 */
+#define PB_PASSENGER_CONTROL    4  /* PF4 */
 
 /***************************************************************************
  *                           Functions declaration
  *************************************************************************** */
 
 void PB_init(uint8 PB_num);
+void PB_initEdgeTriggered(uint8 PB_num,uint8 priority);
+
 uint8 PB_getReading(uint8 PB_num);
 
 
